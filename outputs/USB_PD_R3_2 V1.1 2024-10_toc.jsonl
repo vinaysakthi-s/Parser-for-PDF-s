@@ -1,0 +1,73 @@
+{"section_id": "1.1", "title": "Overview", "page": 34, "level": 2}
+{"section_id": "1.2", "title": "Purpose", "page": 35, "level": 2}
+{"section_id": "1.3", "title": "Section Overview", "page": 36, "level": 2}
+{"section_id": "1.4", "title": "Conventions", "page": 37, "level": 2}
+{"section_id": "1.5", "title": "Related Documents", "page": 39, "level": 2}
+{"section_id": "1.6", "title": "Terms and Abbreviations", "page": 40, "level": 2}
+{"section_id": "1.7", "title": "Parameter Values", "page": 52, "level": 2}
+{"section_id": "1.8", "title": "Changes from Revision 3.0", "page": 52, "level": 2}
+{"section_id": "1.9", "title": "Compatibility with Revision 2.0", "page": 52, "level": 2}
+{"section_id": "2.1", "title": "Introduction", "page": 53, "level": 2}
+{"section_id": "2.2", "title": "Compatibility with Revision 2.0", "page": 54, "level": 2}
+{"section_id": "2.3", "title": "USB Power Delivery Capable Devices", "page": 55, "level": 2}
+{"section_id": "2.4", "title": "SOP* Communication", "page": 57, "level": 2}
+{"section_id": "2.5", "title": "Operational Overview", "page": 59, "level": 2}
+{"section_id": "2.6", "title": "Architectural Overview", "page": 66, "level": 2}
+{"section_id": "2.7", "title": "Extended Power Range (EPR) Operation", "page": 73, "level": 2}
+{"section_id": "2.8", "title": "Charging Models", "page": 75, "level": 2}
+{"section_id": "4.1", "title": "Interoperability with other USB Specifications", "page": 78, "level": 2}
+{"section_id": "4.2", "title": "Dead Battery Detection / Unpowered Port Detection", "page": 78, "level": 2}
+{"section_id": "4.3", "title": "Cable IR Ground Drop (IR Drop)", "page": 78, "level": 2}
+{"section_id": "4.4", "title": "Cable Type Detection", "page": 78, "level": 2}
+{"section_id": "5.1", "title": "Physical Layer Overview", "page": 79, "level": 2}
+{"section_id": "5.2", "title": "Physical Layer Functions", "page": 79, "level": 2}
+{"section_id": "5.3", "title": "Symbol Encoding", "page": 80, "level": 2}
+{"section_id": "5.4", "title": "Ordered Sets", "page": 81, "level": 2}
+{"section_id": "5.5", "title": "Transmitted Bit Ordering", "page": 83, "level": 2}
+{"section_id": "5.6", "title": "Packet Format", "page": 84, "level": 2}
+{"section_id": "5.7", "title": "Collision Avoidance", "page": 91, "level": 2}
+{"section_id": "5.8", "title": "Bi-phase Mark Coding (BMC) Signaling Scheme", "page": 92, "level": 2}
+{"section_id": "5.9", "title": "Built in Self-Test (BIST)", "page": 113, "level": 2}
+{"section_id": "6", "title": "Protocol Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 114, "level": 1}
+{"section_id": "6.1", "title": "Overview", "page": 114, "level": 2}
+{"section_id": "6.2", "title": "Messages", "page": 115, "level": 2}
+{"section_id": "6.3", "title": "Control Message", "page": 128, "level": 2}
+{"section_id": "6.4", "title": "Data Message", "page": 138, "level": 2}
+{"section_id": "6.5", "title": "Extended Message", "page": 215, "level": 2}
+{"section_id": "6.6", "title": "Timers", "page": 249, "level": 2}
+{"section_id": "6.7", "title": "Counters", "page": 265, "level": 2}
+{"section_id": "6.8", "title": "Reset", "page": 268, "level": 2}
+{"section_id": "6.9", "title": "Accept, Reject and Wait", "page": 272, "level": 2}
+{"section_id": "6.10", "title": "Collision Avoidance", "page": 273, "level": 2}
+{"section_id": "6.11", "title": "Message Discarding", "page": 274, "level": 2}
+{"section_id": "6.12", "title": "State behavior", "page": 275, "level": 2}
+{"section_id": "6.13", "title": "Message Applicability", "page": 300, "level": 2}
+{"section_id": "6.14", "title": "Value Parameters", "page": 311, "level": 2}
+{"section_id": "7", "title": "Power Supply. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 312, "level": 1}
+{"section_id": "7.1", "title": "Source Requirements", "page": 312, "level": 2}
+{"section_id": "7.2", "title": "Sink Requirements", "page": 335, "level": 2}
+{"section_id": "7.3", "title": "Transitions", "page": 339, "level": 2}
+{"section_id": "7.4", "title": "Electrical Parameters", "page": 404, "level": 2}
+{"section_id": "8", "title": "Device Policy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 416, "level": 1}
+{"section_id": "8.1", "title": "Overview", "page": 416, "level": 2}
+{"section_id": "8.2", "title": "Device Policy Manager", "page": 417, "level": 2}
+{"section_id": "8.3", "title": "Policy Engine", "page": 424, "level": 2}
+{"section_id": "9", "title": "States and Status Reporting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 975, "level": 1}
+{"section_id": "9.1", "title": "Overview", "page": 975, "level": 2}
+{"section_id": "9.2", "title": "PD Specific Descriptors", "page": 985, "level": 2}
+{"section_id": "9.3", "title": "PD Specific Requests and Events", "page": 990, "level": 2}
+{"section_id": "9.4", "title": "PDUSB Hub and PDUSB Peripheral Device Requests", "page": 991, "level": 2}
+{"section_id": "10", "title": "UPnoivweresarl SReurilael sB u. s. P. o. w. e. r. D. .e l.i v. e. r.y . S.p .e .c i.f i. c.a .t i.o .n ., R. .e v. i.s i.o .n . 3. ..2 ., V. e. r.s .i o. n. 1. ..1 ., 2. 0. 2. 4. -.1 .0 . . . . . 9P9a5ge", "page": 17, "level": 1}
+{"section_id": "10.1", "title": "Introduction", "page": 995, "level": 2}
+{"section_id": "10.2", "title": "Source Power Rules", "page": 995, "level": 2}
+{"section_id": "10.3", "title": "Sink Power Rules", "page": 1013, "level": 2}
+{"section_id": "6", "title": "Protocol Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 114, "level": 1}
+{"section_id": "7", "title": "Power Supply. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 312, "level": 1}
+{"section_id": "8", "title": "Device Policy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 416, "level": 1}
+{"section_id": "9", "title": "States and Status Reporting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 975, "level": 1}
+{"section_id": "10", "title": "Power Rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 995, "level": 1}
+{"section_id": "6", "title": "Protocol Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 114, "level": 1}
+{"section_id": "7", "title": "Power Supply. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 312, "level": 1}
+{"section_id": "8", "title": "Device Policy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 416, "level": 1}
+{"section_id": "9", "title": "States and Status Reporting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 975, "level": 1}
+{"section_id": "10", "title": "Power Rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ", "page": 995, "level": 1}
