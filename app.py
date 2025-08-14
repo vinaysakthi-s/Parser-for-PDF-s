@@ -263,7 +263,7 @@ def upload_file():
 
 # -------------------
 # Run Flask App
-# -------------------
+# -------------------   
 if __name__ == '__main__':
     print("🚀 Starting Flask PDF Parser. Open http://127.0.0.1:5000 in your browser.")
     app.run(debug=True)
