@@ -1,7 +1,7 @@
 PDF Parser:
 A simple web application built with Python and Flask that parses USB Power Delivery (PD) specification PDFs. It allows a user to upload a PDF, which is then processed to extract its structured content (based on the table of contents) into a downloadable JSON file.
 
-Features ✨
+Features:
 Web-Based File Upload: An easy-to-use web interface for uploading PDF files.
 
 Table of Contents Parsing: Intelligently identifies and parses the document's table of contents to understand its structure.
@@ -38,13 +38,12 @@ Bash
 
 pip install -r requirements.txt
 If you do not have a requirements.txt file, create one and add the following lines to it:
-
-Plaintext
-
 Flask
 PyMuPDF
 pdfplumber
-How to Use the Application ▶️
+
+
+How to Use the Application:
 Run the Flask Server
 With your terminal active in the project directory, run the main application script.
 
