@@ -3,95 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USB PD Spec Parser</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Pdf Parser online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover-color: #0056b3;
+            --success-color: #28a745;
+            --success-hover-color: #218838;
+            --error-color: #dc3545;
+            --light-grey: #f8f9fa;
+            --medium-grey: #e9ecef;
+            --dark-grey: #6c757d;
+            --text-color: #343a40;
+            --bg-color: #f4f7f6;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            --border-radius: 12px;
+        }
+        
+        /* Universal box-sizing for predictable layouts */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #eef2f5;
+            background-color: var(--bg-color);
             margin: 0;
             padding: 20px;
-            box-sizing: border-box;
         }
+
         .container {
             background: #ffffff;
-            padding: 40px 50px;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
             text-align: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 480px;
+            transition: all 0.3s ease;
         }
+
         h1 {
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 10px;
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
+
         p {
-            color: #777;
+            color: var(--dark-grey);
             margin-bottom: 30px;
+            font-size: 16px;
         }
+        
+        /* --- FIX APPLIED HERE --- */
         .upload-area {
-            border: 2px dashed #d0dbe2;
-            border-radius: 8px;
-            padding: 25px;
-            background-color: #f9fafb;
+            border: 2px dashed var(--medium-grey);
+            border-radius: var(--border-radius);
+            padding: 25px; /* Slightly reduced padding */
+            background-color: var(--light-grey);
             margin-bottom: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            /* Flexbox properties to align content correctly */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px; /* Ensures a minimum size */
         }
+        /* --- END OF FIX --- */
+
+        .upload-area.drag-over {
+            border-color: var(--primary-color);
+            background-color: #e9f5ff;
+        }
+
+        .upload-area__icon {
+            width: 50px;
+            height: 50px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area__text {
+            color: var(--dark-grey);
+            font-weight: 500;
+        }
+
+        .upload-area__text span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        #file-info {
+            margin-top: 15px;
+            color: var(--success-color);
+            font-weight: 500;
+            display: none; /* Hidden by default */
+            word-break: break-all; /* Prevents long filenames from overflowing */
+        }
+        
+        #client-error {
+            color: var(--error-color);
+            font-weight: 500;
+            margin-top: 15px;
+            display: none; /* Hidden by default */
+        }
+
         input[type="file"] {
             display: none;
         }
-        .file-label {
-            color: #555;
-            cursor: pointer;
-        }
-        #file-name {
-            margin-top: 10px;
-            color: #007bff;
-            font-weight: 500;
-        }
-        input[type="submit"] {
-            background-color: #28a745;
+
+        .submit-btn {
+            background-color: var(--success-color);
             color: white;
             padding: 14px 30px;
             border: none;
-            border-radius: 6px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             font-size: 16px;
-            font-weight: 500;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        input[type="submit"]:hover {
-            background-color: #218838;
+
+        .submit-btn:hover:not(:disabled) {
+            background-color: var(--success-hover-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
         }
-        input[type="submit"]:disabled {
-            background-color: #ccc;
+
+        .submit-btn:disabled {
+            background-color: #a3d9b1;
             cursor: not-allowed;
         }
-        .flash {
-            padding: 15px; margin-top: 25px; border-radius: 6px; font-size: 14px; text-align: left;
+        
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
         }
-        .flash.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .flash {
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            text-align: left;
+            border: 1px solid transparent;
+        }
+
+        .flash.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>USB PD Specification Parser</h1>
-        <p>Upload a PDF to generate a downloadable JSON file of its contents.</p>
+        <h1>PDF Parser </h1>
+        <p>Drag & drop or click to upload a PDF. A JSON file will be generated for you.</p>
 
         <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
-            <label for="pdf_file" class="upload-area">
-                <div class="file-label">Click to Choose a PDF File</div>
-                <div id="file-name">No file selected</div>
-            </label>
-            <input type="file" id="pdf_file" name="pdf_file" accept=".pdf">
             
-            <input type="submit" id="submit-button" value="Parse and Download JSON" disabled>
+            <label for="pdf_file" id="upload-area" class="upload-area">
+                <svg class="upload-area__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                </svg>
+                <div id="upload-text" class="upload-area__text">Drag & drop a file here or <span>browse</span></div>
+                <div id="file-info"></div>
+                <div id="client-error"></div>
+            </label>
+            
+            <input type="file" id="pdf_file" name="pdf_file" accept=".pdf" hidden>
+            
+            <button type="submit" id="submit-button" class="submit-btn" disabled>
+                <span id="button-text">Parse and Download</span>
+                <div id="spinner" class="spinner"></div>
+            </button>
         </form>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -104,18 +213,54 @@
     </div>
 
     <script>
+        const uploadForm = document.getElementById('upload-form');
         const pdfFileInput = document.getElementById('pdf_file');
-        const fileNameDisplay = document.getElementById('file-name');
+        const uploadArea = document.getElementById('upload-area');
+        const uploadText = document.getElementById('upload-text');
+        const fileInfo = document.getElementById('file-info');
+        const clientError = document.getElementById('client-error');
         const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const spinner = document.getElementById('spinner');
 
-        pdfFileInput.addEventListener('change', () => {
-            if (pdfFileInput.files.length > 0) {
-                fileNameDisplay.textContent = `Selected: ${pdfFileInput.files[0].name}`;
+        function handleFile(file) {
+            if (file && file.type === "application/pdf") {
+                fileInfo.textContent = `Selected: ${file.name}`;
+                fileInfo.style.display = 'block';
+                uploadText.style.display = 'none';
+                clientError.style.display = 'none';
                 submitButton.disabled = false;
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                pdfFileInput.files = dataTransfer.files;
             } else {
-                fileNameDisplay.textContent = 'No file selected';
+                clientError.textContent = 'Error: Please select a valid PDF file.';
+                clientError.style.display = 'block';
+                fileInfo.style.display = 'none';
+                uploadText.style.display = 'block';
                 submitButton.disabled = true;
+                pdfFileInput.value = '';
             }
+        }
+
+        uploadArea.addEventListener('click', () => pdfFileInput.click());
+        pdfFileInput.addEventListener('change', () => {
+            if (pdfFileInput.files.length > 0) handleFile(pdfFileInput.files[0]);
+        });
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
+        });
+        uploadForm.addEventListener('submit', () => {
+            submitButton.disabled = true;
+            buttonText.textContent = 'Processing...';
+            spinner.style.display = 'block';
         });
     </script>
 </body>
