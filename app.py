@@ -8,7 +8,7 @@ from parser import PDFParser
 # Flask App Setup
 # -------------------
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Needed for flashing messages
+app.secret_key = 'supersecretkey'
 UPLOAD_FOLDER = "uploads"
 OUTPUT_FOLDER = "outputs"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -61,9 +61,7 @@ def upload_file():
 
     return send_from_directory(OUTPUT_FOLDER, zip_filename, as_attachment=True)
 
-# -------------------
-# Run Flask App
-# -------------------   
+
 if __name__ == '__main__':
     print("🚀 Starting Flask PDF Parser. Open http://127.0.0.1:5000 in your browser.")
     app.run(debug=True)
